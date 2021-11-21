@@ -1,0 +1,8 @@
+{
+  "name": "santa-close",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/josworks27/santa-close.git",
+  "author": "santa-close",
+  "license": "MIT"
+}
