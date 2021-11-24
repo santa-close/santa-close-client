@@ -1,0 +1,9 @@
+{
+  "name": "santa_close_common",
+  "version": "0.0.1",
+  "description": "santa-close common pkg",
+  "main": "index.js",
+  "author": "santa-close",
+  "license": "MIT",
+  "private": true
+}
