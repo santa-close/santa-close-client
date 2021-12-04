@@ -8,12 +8,16 @@
  * @format
  */
 
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import {SafeAreaView, Text, useColorScheme} from 'react-native';
+import {useColorScheme} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import KakaoButton from './test/KakaoButton';
+import HomeScreen from './screens/home';
+import WebViewSampleScreen from './screens/webviewSample';
+
+const Tab = createBottomTabNavigator();
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -24,18 +28,14 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <SafeAreaView style={backgroundStyle}>
-        <Text
-          style={{
-            fontSize: 32,
-            fontWeight: 'bold',
-            alignSelf: 'center',
-            marginBottom: 30,
-          }}>
-          Test용 페이지 입니다.
-        </Text>
-        <KakaoButton />
-      </SafeAreaView>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen
+          options={{headerShown: false}}
+          name="WebViewSample"
+          component={WebViewSampleScreen}
+        />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };
