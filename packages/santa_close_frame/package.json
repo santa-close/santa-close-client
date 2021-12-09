@@ -1,0 +1,34 @@
+{
+  "name": "santa_close_frame",
+  "version": "1.0.0",
+  "author": "santa-close",
+  "private": true,
+  "scripts": {
+    "start": "ws -d build --spa index.html --port 3000 -z",
+    "build": "NODE_ENV=production webpack",
+    "watch": "webpack --watch",
+    "develop": "webpack serve --port 3000",
+    "clean": "rm -rf build"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-typescript": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "dotenv": "^10.0.0",
+    "css-loader": "^6.5.1",
+    "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1",
+    "html-webpack-plugin": "^5.5.0",
+    "terser-webpack-plugin": "^5.2.5",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0",
+    "typescript": "^4.5.2"
+  }
+}
