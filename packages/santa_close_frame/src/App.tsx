@@ -1,7 +1,6 @@
 import React from 'react'
-import Box from 'app_uikit/Box'
 
-// const BoxComponent = React.lazy(() => import('app_uikit/Box'))
+const Box = React.lazy(() => import('app_uikit/Box'))
 
 export function App() {
   return (

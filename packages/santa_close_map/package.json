@@ -1,0 +1,32 @@
+{
+  "name": "santa_close_map",
+  "version": "1.0.0",
+  "author": "santa-close",
+  "private": true,
+  "scripts": {
+    "build:dev": "webpack --mode='development'",
+    "build:prod": "webpack --mode='production'",
+    "dev": "webpack serve --mode='development'",
+    "clean": "rm -rf node_modules"
+  },
+  "dependencies": {
+    "santa_close_uikit": "^1.0.0",
+    "dotenv": "^10.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0",
+    "html-webpack-plugin": "^5.5.0",
+    "typescript": "^4.5.2"
+  }
+}
