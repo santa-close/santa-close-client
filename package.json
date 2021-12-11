@@ -25,9 +25,15 @@
     "prettier": "^2.5.1",
     "eslint": "^8.4.0"
   },
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/santa_close_app",
+      "**/santa_close_app/**"
+    ]
+  },
   "engines": {
     "node": ">=16",
     "yarn": ">=1.22"
