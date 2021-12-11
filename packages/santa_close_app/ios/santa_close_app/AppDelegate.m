@@ -4,6 +4,7 @@
 #import <React/RCTRootView.h>
 
 #import <RNKakaoLogins.h>
+#import <RNGoogleSignin/RNGoogleSignin.h>
 
 #ifdef FB_SONARKIT_ENABLED
 #import <FlipperKit/FlipperClient.h>
@@ -54,7 +55,7 @@ static void InitializeFlipper(UIApplication *application) {
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
 {
 #if DEBUG
-  return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"packages/santa_close_app/index" fallbackResource:nil];
+  return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
 #else
   return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
 #endif
@@ -66,8 +67,7 @@ static void InitializeFlipper(UIApplication *application) {
  if([RNKakaoLogins isKakaoTalkLoginUrl:url]) {
     return [RNKakaoLogins handleOpenUrl: url];
  }
-
- return NO;
+ return [RNGoogleSignin application:app openURL:url options:options];
 }
 
 @end

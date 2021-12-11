@@ -1,6 +1,6 @@
 import {KakaoOAuthToken, login} from '@react-native-seoul/kakao-login';
 import React from 'react';
-import {View, Button} from 'react-native';
+import {Button} from 'react-native';
 
 const KakaoButton = () => {
   const signInWithKakao = async (): Promise<void> => {
@@ -8,13 +8,7 @@ const KakaoButton = () => {
 
     console.log(token);
   };
-  return (
-    <View>
-      <Button title="test" onPress={signInWithKakao}>
-        testKakao
-      </Button>
-    </View>
-  );
+  return <Button title="testKakao" onPress={signInWithKakao} />;
 };
 
 export default KakaoButton;

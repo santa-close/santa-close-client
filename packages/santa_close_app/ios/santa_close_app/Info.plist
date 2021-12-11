@@ -30,6 +30,14 @@
 				<string>kakao82c0226a7a311e2318ed03ae50e0974d</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.227165466156-lr5cjjr4ncgqc2jedielq2632a135pht</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
