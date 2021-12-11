@@ -31,7 +31,7 @@ public class MainApplication extends Application implements ReactApplication {
 
         @Override
         protected String getJSMainModuleName() {
-          return "packages/santa_close_app/index";
+          return "index";
         }
       };
 
