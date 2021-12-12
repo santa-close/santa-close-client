@@ -5,6 +5,8 @@
   "author": "santa-close",
   "private": true,
   "scripts": {
+    "build:map": "yarn workspace santa_close_uikit build && yarn workspace santa_close_map build:prod",
+    "dev:map": "yarn workspace santa_close_uikit build && yarn workspace santa_close_map dev",
     "clean": "npx lerna clean -y && npx lerna run clean && rm -rf build node_modules"
   },
   "devDependencies": {
