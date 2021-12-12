@@ -1,12 +1,18 @@
 import React from 'react'
+// import {Box} from 'santa_close_uikit'
 
-const Box = React.lazy(() => import('app_uikit/Box'))
+// import MapApp from 'map-app/MapApp'
 
-export function App() {
+const MapApp = React.lazy(() => import('map-app/MapApp'))
+
+const App = () => {
   return (
     <div>
       <h1>{'This is Frame App'}</h1>
-      <Box />
+      <MapApp />
+      {/*<Box />*/}
     </div>
   )
 }
+
+export default App
