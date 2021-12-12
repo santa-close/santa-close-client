@@ -5,7 +5,7 @@ import WebView from 'react-native-webview';
 const WebViewSampleScreen = () => {
   return (
     <SafeAreaView style={{height: '100%'}}>
-      <WebView source={{uri: 'https://caredoc.kr'}} />
+      <WebView source={{uri: 'http://localhost:3000/'}} />
     </SafeAreaView>
   );
 };
