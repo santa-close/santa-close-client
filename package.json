@@ -9,6 +9,11 @@
     "dev:map": "yarn workspace santa_close_uikit build && yarn workspace santa_close_map dev",
     "clean": "npx lerna clean -y && npx lerna run clean && rm -rf build node_modules"
   },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.3.0"
+  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
