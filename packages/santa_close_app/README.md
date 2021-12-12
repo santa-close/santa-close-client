@@ -1,6 +1,21 @@
 # santa-close-app 실행 방법
-- ios: cd packages/santa_close_app/ios && pod install && cd ../../../ && yarn dev:ios
-- and: yarn dev:and
+
+## ios
+1. yarn install
+2. cd packages/santa_close_app/ios
+3. pod install
+4. cd ../../../
+5. yarn dev:ios
+
+## android
+1. yarn install
+2. yarn dev:and
+
+## android clean build
+1. cd packages/santa_close_app/android
+2. ./gradlew clean
+3. cd ../../../
+4. yarn dev:and
 
 ## m1 맥 유의 사항
 - pod install 명령어 사용시 arch -x86_64 pod install 사용 (pod rosetta 환경에서 설치 필요)
