@@ -1,9 +1,9 @@
-# What is it?
+# Project Description
 지도를 기반으로 등산한 산과 산 주변의 맛집을 공유하는 앱입니다.
 
-# How is it implemented?
-* Package Managing using Monorepo
-* Micro Frontend Architecture using Webpack Module Federation(MFE) 
+# Features
+* Lerna + Yarn workspace를 사용한 모노레포 방식의 패키지 관리
+* Webpack Module Federation(MFE)를 사용한 마이크로 프론트엔드 아키텍쳐 
 
 # Packages
 * santa_close_app
@@ -16,10 +16,10 @@
 # root
 yarn install
 
-# map_app build & serve on 3001
+# map_app 빌드 및 개발서버 시작(localhost:3001)
 yarn dev:map
 
-# frame_app build & serve on 3000
+# frame_app 빌드 및 개발서버 시작(localhost:3000)
 yarn dev:frame
 ```
 
