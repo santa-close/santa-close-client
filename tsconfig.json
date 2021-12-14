@@ -105,5 +105,8 @@
       "src/*": ["src/*"]
     }
   },
+  "include": [
+    "./jest.setup.ts"
+  ],
   "exclude": ["node_modules"]
 }
