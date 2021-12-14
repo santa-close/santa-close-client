@@ -9,7 +9,7 @@
     "dev:map": "yarn workspace santa_close_uikit build && yarn workspace santa_close_map dev",
     "clean": "npx lerna clean -y && npx lerna run clean && rm -rf build node_modules",
     "test": "jest",
-    "watch": "jest --watchAll"
+    "test:watch": "jest --watchAll"
   },
   "dependencies": {
     "react": "^17.0.2",
