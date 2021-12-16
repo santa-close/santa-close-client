@@ -9,7 +9,7 @@ const App = () => {
         border: '1px solid red',
       }}
     >
-      <h1>{'This is Map App of santa-close-map'}</h1>
+      <h1>This is Map App of santa-close-map</h1>
       <Box />
     </div>
   )
