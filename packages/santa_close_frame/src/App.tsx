@@ -5,11 +5,11 @@ import {Navigator, Screen} from '@karrotframe/navigator'
 const MapApp = React.lazy(() => import('map-app/MapApp'))
 
 const Page1 = () => {
-  return <h1>{'Here is PAGE1'}</h1>
+  return <h1>Here is PAGE1</h1>
 }
 
 const Page2 = () => {
-  return <h1>{'Here is PAGE2'}</h1>
+  return <h1>Here is PAGE2</h1>
 }
 
 const MapAppContainer = () => {
@@ -20,8 +20,8 @@ const MapAppContainer = () => {
         border: '1px solid blue',
       }}
     >
-      <h1>{'This is Frame App of santa-close-frame with KarrotFrame'}</h1>
-      <React.Suspense fallback={'loading...'}>
+      <h1>This is Frame App of santa-close-frame with KarrotFrame</h1>
+      <React.Suspense fallback="loading...">
         <MapApp />
       </React.Suspense>
     </div>
