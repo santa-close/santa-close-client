@@ -4,6 +4,8 @@ import {Navigator, Screen} from '@karrotframe/navigator'
 
 const MapApp = React.lazy(() => import('map-app/MapApp'))
 
+var test = 'test'
+
 const Page1 = () => {
   return <h1>Here is PAGE1</h1>
 }
