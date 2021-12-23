@@ -12,6 +12,9 @@
     "clean": "npx lerna clean -y && npx lerna run clean && rm -rf build node_modules",
     "test": "jest",
     "test:watch": "jest --watchAll",
+    "lint": "eslint './**/*.+(js|ts)?(x)'",
+    "lint:fix": "eslint './**/*.+(js|ts)?(x)' --fix",
+    "type-check": "tsc --noEmit",
     "build": "yarn workspace santa_close_uikit build"
   },
   "dependencies": {
