@@ -3,7 +3,13 @@ const path = require('path')
 module.exports = {
   plugins: ['react', '@typescript-eslint', 'prettier'],
   extends: ['airbnb', 'airbnb/hooks', 'airbnb-typescript', 'prettier'],
-  ignorePatterns: ['**/build', '**/*.config.js'],
+  ignorePatterns: [
+    '**/build',
+    '**/*.config.js',
+    '**/dist',
+    '**/node_modules',
+    '**/coverage',
+  ],
   parserOptions: {
     project: ['./tsconfig.json', './packages/*/tsconfig.json'],
     tsconfigRootDir: __dirname,

@@ -14,7 +14,7 @@
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage",
     "type-check": "yarn workspaces run type-check",
-    "lint": "eslint './**/*.+(js|ts)?(x)'",
+    "lint": "yarn workspaces run lint",
     "clean": "npx lerna clean -y && npx lerna run clean && rm -rf build node_modules"
   },
   "dependencies": {
