@@ -13,7 +13,7 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage",
-    "type-check": "tsc --noEmit",
+    "type-check": "yarn workspaces run type-check",
     "lint": "eslint './**/*.+(js|ts)?(x)'",
     "clean": "npx lerna clean -y && npx lerna run clean && rm -rf build node_modules"
   },
