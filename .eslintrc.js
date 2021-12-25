@@ -28,7 +28,7 @@ module.exports = {
           path.resolve(__dirname, './packages/santa_close_app'),
           path.resolve(__dirname, './packages/santa_close_map'),
           path.resolve(__dirname, './packages/santa_close_frame'),
-          path.resolve(__dirname, './packages/santa_close_ds'),
+          path.resolve(__dirname, './packages/santa_close_design-system'),
         ],
         devDependencies: [
           '**/*.test.ts',

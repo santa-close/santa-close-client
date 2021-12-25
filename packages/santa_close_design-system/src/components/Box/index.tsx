@@ -8,7 +8,7 @@ const Box = () => {
         border: '1px solid green',
       }}
     >
-      <h1>This is Box component of santa_close_ds</h1>
+      <h1>This is Box component of santa_close_design-system</h1>
     </div>
   )
 }
