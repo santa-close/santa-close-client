@@ -23,6 +23,9 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
+        
+      - name: Build santa_close_design-system
+        run: yarn build
 
       - name: Lint check
         run: yarn lint
