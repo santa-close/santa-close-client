@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box} from 'santa_close_ds'
+import {Box} from 'santa_close_design-system'
 
 const App = () => {
   return (

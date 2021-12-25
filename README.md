@@ -12,7 +12,7 @@
 - santa_close_app
 - santa_close_frame
 - santa_close_map
-- santa_close_ds
+- santa_close_design-system
 
 # Getting Started
 

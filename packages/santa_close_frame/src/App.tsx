@@ -1,6 +1,6 @@
 import React from 'react'
 import {Navigator, Screen} from '@karrotframe/navigator'
-// import {Box} from 'santa_close_ds'
+// import {Box} from 'santa_close_design-system'
 
 const MapApp = React.lazy(() => import('map-app/MapApp'))
 
