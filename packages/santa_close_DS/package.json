@@ -8,6 +8,7 @@
   "types": "./build/types/index.d.ts",
   "scripts": {
     "build": "tsc --emitDeclarationOnly & rollup -c",
+    "type-check": "tsc --noEmit",
     "clean": "rm -rf build & rm -rf node_modules"
   },
   "devDependencies": {
