@@ -5,14 +5,16 @@
   "author": "santa-close",
   "private": true,
   "scripts": {
+    "dev:ios": "yarn workspace santa_close_frame ios",
+    "dev:and": "yarn workspace santa_close_frame and",
     "dev:frame": "yarn workspace santa_close_frame dev",
-    "dev:map": "yarn workspace santa_close_uikit build && yarn workspace santa_close_map dev",
+    "dev:map": "yarn workspace santa_close_ds build && yarn workspace santa_close_map dev",
     "dev:and": "yarn workspace santa_close_app and",
     "dev:ios": "yarn workspace santa_close_app ios",
     "clean": "npx lerna clean -y && npx lerna run clean && rm -rf build node_modules",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "build": "yarn workspace santa_close_uikit build"
+    "build": "yarn workspace santa_close_ds build"
   },
   "dependencies": {
     "react": "^17.0.2",
