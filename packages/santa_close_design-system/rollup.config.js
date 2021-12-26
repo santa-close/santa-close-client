@@ -3,9 +3,10 @@ import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import babel from '@rollup/plugin-babel'
 import typescript from 'rollup-plugin-typescript2'
+import {terser} from 'rollup-plugin-terser'
 
 const packageJson = require('./package.json')
-const extensions = ['ts', 'tsx']
+const extensions = ['.ts', '.tsx']
 const external = ['react', 'react-dom']
 
 process.env.BABEL_ENV = 'production'
@@ -20,25 +21,28 @@ export default {
     },
     {
       file: packageJson.module,
-      format: 'esm',
+      format: 'es',
       sourcemap: true,
     },
   ],
+  external: [/@babel\/runtime/],
   plugins: [
     peerDepsExternal(),
     resolve({extensions}),
     babel({
       extensions,
       include: ['src/**/*'],
-      exclude: ['node_modules'],
+      exclude: ['node_modules/**'],
       babelHelpers: 'runtime',
     }),
     commonjs({
       include: /node_modules/,
+      extensions: [...extensions, '.js'],
     }),
     typescript({
       useTsconfigDeclarationDir: true,
     }),
+    terser(),
   ],
   external,
 }
