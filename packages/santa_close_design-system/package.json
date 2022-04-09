@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "author": "santa-close",
   "private": true,
-  "main": "./build/index.js",
-  "module": "./build/index.es.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.es.js",
   "types": "./build/types/index.d.ts",
   "scripts": {
-    "build": "tsc --emitDeclarationOnly & rollup -c",
+    "build": "tsc --emitDeclarationOnly && vite build",
     "lint": "eslint './**/*.+(js|ts)?(x)'",
     "type-check": "tsc --noEmit",
     "clean": "rm -rf build & rm -rf node_modules"
@@ -15,20 +15,8 @@
   "devDependencies": {
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
-    "@babel/core": "^7.17.8",
-    "@babel/preset-react": "^7.16.7",
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-typescript": "^7.16.7",
-    "@babel/plugin-transform-runtime": "^7.17.0",
-    "babel-preset-react-app": "^10.0.1",
-    "rollup": "^2.70.1",
-    "rollup-plugin-typescript2": "^0.31.2",
-    "@rollup/plugin-commonjs": "^21.0.3",
-    "@rollup/plugin-node-resolve": "^13.1.3",
-    "@rollup/plugin-babel": "^5.3.1",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-terser": "^7.0.2",
-    "typescript": "^4.6.3"
+    "typescript": "^4.6.3",
+    "vite": "^2.9.0"
   },
   "peerDependencies": {
     "react": "^18.0.0",
