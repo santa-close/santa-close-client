@@ -23,7 +23,7 @@
     /* Import emit helpers from 'tslib'. */
     "importHelpers": true,
     /* Jsx mode */
-    "jsx": "react",
+    "jsx": "react-jsx",
 
     /********************************
      * Strict Type-Checking Options *
