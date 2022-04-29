@@ -15,6 +15,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   rules: {
+    'plugin:react/jsx-runtime': 'extends',
     'react/jsx-filename-extension': [1, {extensions: ['.jsx', '.tsx']}],
     'react/function-component-definition': [
       2,
