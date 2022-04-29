@@ -15,7 +15,7 @@
     "santa_close_design-system": "^1.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "@karrotframe/navigator": "^0.18.0"
+    "@karrotframe/navigator": "^0.24.2"
   },
   "devDependencies": {
     "@types/react": "^17.0.43",

@@ -30,7 +30,7 @@ const MapAppContainer = () => {
 
 const App = () => {
   return (
-    <Navigator>
+    <Navigator onClose={console.log}>
       <Screen component={MapAppContainer} path="/" />
       <Screen component={Page1} path="/page1" />
       <Screen component={Page2} path="/page2" />
