@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "declaration": true,
+    "declarationDir": "build/types",
+    "rootDir": "./src",
+    "outDir": "./build",
+    "module": "ES2020",
+    "noEmit": false
+  },
+  "include": [
+    "src/**/*",
+  ],
+  "exclude": ["node_modules", "build"]
+}
