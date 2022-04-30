@@ -10,7 +10,7 @@
     "build": "yarn build:ds && yarn build:common",
     "dev:watch": "yarn workspace santa_close_design-system dev & yarn workspace santa_close_common dev",
     "dev:frame": "yarn workspace santa_close_frame dev",
-    "dev:map": "yarn dev:watch & yarn workspace santa_close_map dev",
+    "dev:map": "yarn workspace santa_close_map dev",
     "dev:and": "yarn workspace santa_close_app and",
     "dev:ios": "yarn workspace santa_close_app ios",
     "test": "jest",
