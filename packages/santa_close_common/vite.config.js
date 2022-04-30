@@ -13,7 +13,7 @@ module.exports = defineConfig({
     },
     minify: 'esbuild',
     rollupOptions: {
-      output: {},
+      external: ['react', 'react-dom'],
     },
   },
 })
