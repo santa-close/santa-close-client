@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "santa-close",
   "private": true,
-  "main": "./dist/index.js",
+  "main": "./dist/index.es.js",
   "module": "./dist/index.es.js",
   "types": "./build/types/index.d.ts",
   "scripts": {
