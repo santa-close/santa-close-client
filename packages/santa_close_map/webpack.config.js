@@ -1,14 +1,11 @@
 const path = require('path')
 const {ModuleFederationPlugin} = require('webpack').container
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExternalTemplateRemotesPlugin = require('external-remotes-plugin')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 module.exports = {
   entry: './src/index.tsx',
-
-  // output: {
-  //   filename: 'main.js',
-  //   path: path.resolve(__dirname, 'dist'),
-  // },
 
   output: {
     publicPath: 'http://localhost:3001/',
@@ -20,10 +17,13 @@ module.exports = {
   },
 
   devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
+    static: path.join(__dirname, 'dist'),
     port: 3001,
+    hot: true,
+    liveReload: false,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
   },
 
   module: {
@@ -42,17 +42,13 @@ module.exports = {
             ],
             '@babel/preset-typescript',
           ],
+          plugins: [require.resolve('react-refresh/babel')],
         },
       },
     ],
   },
 
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public/index.html'),
-      filename: 'index.html',
-    }),
-
     new ModuleFederationPlugin({
       name: 'map_app',
       filename: 'remoteEntry.js',
@@ -65,6 +61,17 @@ module.exports = {
       //     'react-dom': {singleton: true},
       //   },
       // ],
+    }),
+
+    new ExternalTemplateRemotesPlugin(),
+
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+      chunks: ['main'],
+    }),
+
+    new ReactRefreshWebpackPlugin({
+      exclude: [/node_modules/],
     }),
   ],
 }

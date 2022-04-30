@@ -1,6 +1,8 @@
 const path = require('path')
 const {ModuleFederationPlugin} = require('webpack').container
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExternalTemplateRemotesPlugin = require('external-remotes-plugin')
+const LiveReloadPlugin = require('webpack-livereload-plugin')
 
 module.exports = {
   entry: './src/index.tsx',
@@ -15,7 +17,12 @@ module.exports = {
   },
 
   devServer: {
+    hot: false,
+    static: path.join(__dirname, 'dist'),
     port: 3000,
+    historyApiFallback: {
+      index: 'index.html',
+    },
   },
 
   module: {
@@ -55,6 +62,12 @@ module.exports = {
       remotes: {
         'map-app': 'map_app@http://localhost:3001/remoteEntry.js',
       },
+    }),
+
+    new ExternalTemplateRemotesPlugin(),
+
+    new LiveReloadPlugin({
+      port: 35729,
     }),
   ],
 }
