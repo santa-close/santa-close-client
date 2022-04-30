@@ -9,14 +9,12 @@ module.exports = {
     '**/dist',
     '**/node_modules',
     '**/coverage',
-    './packages/santa_close_common/src/graphql/index.ts',
   ],
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
       plugins: ['@typescript-eslint', 'prettier'],
       extends: ['airbnb-typescript', 'prettier'],
-      ignorePatterns: ['./packages/santa_close_common/src/graphql/index.ts'],
       parserOptions: {
         project: ['./tsconfig.json', './packages/*/tsconfig.json'],
         tsconfigRootDir: __dirname,
