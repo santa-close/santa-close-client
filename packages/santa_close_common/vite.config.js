@@ -9,7 +9,7 @@ module.exports = defineConfig({
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'common',
       fileName: (format) => `index.${format}.js`,
-      formats: ['es', 'cjs'],
+      formats: ['es'],
     },
     minify: 'esbuild',
     rollupOptions: {
