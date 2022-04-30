@@ -8,7 +8,7 @@
     "build:ds": "yarn workspace santa_close_design-system build",
     "build:common": "yarn workspace santa_close_common build",
     "build": "yarn build:ds && yarn build:common",
-    "dev:watch": "yarn build:ds --watch & yarn build:common --watch",
+    "dev:watch": "yarn workspace santa_close_design-system dev & yarn workspace santa_close_common dev",
     "dev:frame": "yarn workspace santa_close_frame dev",
     "dev:map": "yarn dev:watch & yarn workspace santa_close_map dev",
     "dev:and": "yarn workspace santa_close_app and",
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.16.7",
+    "@graphql-eslint/eslint-plugin": "^3.10.3",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@types/jest": "^27.4.1",

@@ -1,3 +1,2 @@
-export function testFunction() {
-  console.log('I am TEST FUNCTION')
-}
+export * from './apollo'
+export * from './graphql'

@@ -7,7 +7,7 @@
   "module": "./dist/index.es.js",
   "types": "./build/types/index.d.ts",
   "scripts": {
-    "dev": "vite build --watch",
+    "dev": "tsc --emitDeclarationOnly --watch & vite build --watch",
     "build": "tsc --emitDeclarationOnly && vite build",
     "lint": "eslint './**/*.+(js|ts)?(x)'",
     "type-check": "tsc --noEmit",
