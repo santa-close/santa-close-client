@@ -1,5 +1,6 @@
-import {Box} from 'santa_close_design-system'
+import {RecoilRoot} from 'recoil'
 import {ApolloProvider, useSampleQuery} from 'santa_close_common'
+import MapApp from './MapApp'
 
 const TestComponent = () => {
   const data = useSampleQuery({
@@ -12,16 +13,10 @@ const TestComponent = () => {
 const App = () => {
   return (
     <ApolloProvider>
-      <div
-        style={{
-          margin: '10px',
-          border: '1px solid red',
-        }}
-      >
-        <h1>This is Map App of santa-close-map</h1>
-        <Box />
+      <RecoilRoot>
+        <MapApp />
         <TestComponent />
-      </div>
+      </RecoilRoot>
     </ApolloProvider>
   )
 }
