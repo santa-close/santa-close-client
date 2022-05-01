@@ -16,7 +16,7 @@ target 'santa_close_app' do
     inherit! :complete
     # Pods for testing
   end
-  pod 'GoogleSignIn', '~> 6.0.2'
+  pod 'GoogleSignIn', '~> 6.1.0'
   # Enables Flipper.
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and
