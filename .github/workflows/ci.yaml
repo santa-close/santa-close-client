@@ -34,7 +34,7 @@ jobs:
       - name: Build santa_close_design-system
         run: yarn build
         env:
-          SCHEMA_PATH: ./back/app/src/main/resources/graphql/schema.graphql
+          SCHEMA_PATH: ../../back/app/src/main/resources/graphql/schema.graphql
 
       - name: Lint check
         run: yarn lint
