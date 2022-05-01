@@ -1,4 +1,4 @@
-schema: './schema.graphql'
+schema: ${SCHEMA_PATH}
 documents: './src/graphql/**/*.graphql'
 generates:
   src/graphql/index.ts:

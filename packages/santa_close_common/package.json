@@ -7,7 +7,7 @@
   "module": "./dist/index.es.js",
   "types": "./build/types/index.d.ts",
   "scripts": {
-    "dev": "yarn generate --watch & tsc --emitDeclarationOnly --watch & vite build --watch",
+    "dev": "SCHEMA_PATH=http://localhost:4000/graphql yarn generate --watch & tsc --emitDeclarationOnly --watch & vite build --watch",
     "build": "yarn generate && tsc --emitDeclarationOnly && vite build",
     "lint": "eslint './**/*.+(js|ts)?(x)'",
     "type-check": "tsc --noEmit",
