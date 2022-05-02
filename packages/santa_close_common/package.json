@@ -7,7 +7,7 @@
   "module": "./dist/index.es.js",
   "types": "./build/types/index.d.ts",
   "scripts": {
-    "dev": "SCHEMA_PATH=http://localhost:4000/graphql yarn generate --watch & tsc --emitDeclarationOnly --watch & vite build --watch",
+    "dev": "SCHEMA_PATH=http://localhost:4000/graphql yarn generate && concurrently \"yarn generate --watch\" \"tsc --emitDeclarationOnly --watch\" \"vite build --watch\"",
     "build": "yarn generate && tsc --emitDeclarationOnly && vite build",
     "lint": "eslint './**/*.+(js|ts)?(x)'",
     "type-check": "tsc --noEmit",
@@ -17,6 +17,7 @@
   "devDependencies": {
     "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.3",
+    "concurrently": "^7.1.0",
     "typescript": "^4.6.4",
     "vite": "^2.9.6"
   },
