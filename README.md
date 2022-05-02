@@ -10,15 +10,21 @@
 # Packages
 
 - santa_close_app
+- santa_close_common
 - santa_close_frame
 - santa_close_map
 - santa_close_design-system
 
 # Getting Started
 
+> graphql 스키마 validation 필요시 [GraphQL extension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql) 설치 & 백엔드 서버 띄운채로 작업
+
 ```shell
 # root
 yarn install
+
+# common packages build & watch
+yarn dev:watch
 
 # map_app 빌드 및 개발서버 시작(localhost:3001)
 yarn dev:map
