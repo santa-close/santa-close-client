@@ -3,21 +3,22 @@
 
 name: CI
 
-on: [push, pull_request]
+on: [pull_request, push]
 
 jobs:
-  build:
+  ci:
     name: CI
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Use Node.js v16
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '16'
-
-      - name: Checkout repository
-        uses: actions/checkout@v2
+          cache: 'yarn'
 
       - name: Checkout backend repo
         uses: actions/checkout@v3
@@ -25,13 +26,10 @@ jobs:
           repository: santa-close/santa-close-server
           path: ./back
 
-      - name: Install yarn
-        run: npm i -g yarn
-
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --frozen-lockfile
 
-      - name: Build santa_close_design-system
+      - name: Build packages
         run: yarn build
         env:
           SCHEMA_PATH: ../../back/app/src/main/resources/graphql/schema.graphql
