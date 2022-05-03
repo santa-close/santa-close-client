@@ -29,9 +29,6 @@ jobs:
           repository: santa-close/santa-close-server
           path: ./back
 
-      - name: Install yarn
-        run: npm i -g yarn
-
       - name: Install dependencies
         run: yarn install
 

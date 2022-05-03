@@ -2,7 +2,7 @@ import {Box} from 'santa_close_design-system'
 import {ApolloProvider, useSampleQuery} from 'santa_close_common'
 
 const TestComponent = () => {
-  const data = useSampleQuery({
+  const {data} = useSampleQuery({
     variables: {input: {price: 100}},
   })
   console.log(data)
