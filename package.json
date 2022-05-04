@@ -17,7 +17,7 @@
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage",
     "type-check": "yarn workspaces run type-check",
-    "lint": "lint-staged",
+    "lint": "yarn workspaces run lint --ignore-path ../../.gitignore",
     "clean": "npx lerna clean -y && npx lerna run clean && rm -rf build node_modules",
     "prepare": "husky install"
   },
@@ -46,14 +46,13 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-unicorn": "^42.0.0",
-    "husky": "^7.0.0",
     "jest": "^28.0.3",
     "lerna": "^4.0.0",
-    "lint-staged": "^12.4.1",
     "prettier": "^2.6.2",
     "ts-jest": "^27.1.4",
     "tslib": "^2.4.0",
-    "typescript": "^4.6.4"
+    "typescript": "^4.6.4",
+    "husky": "^7.0.0"
   },
   "workspaces": {
     "packages": [
@@ -62,11 +61,6 @@
     "nohoist": [
       "**/santa_close_app",
       "**/santa_close_app/**"
-    ]
-  },
-  "lint-staged": {
-    "*.{ts,tsx,js}": [
-      "yarn workspaces run lint --ignore-path ../../.gitignore"
     ]
   },
   "engines": {
