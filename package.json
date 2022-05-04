@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "repository": "https://github.com/santa-close/santa-close-client.git",
   "author": "santa-close",
-  "private": true,
+  "private": false,
   "scripts": {
     "build:ds": "yarn workspace santa_close_design-system build",
     "build:common": "yarn workspace santa_close_common build",
@@ -18,7 +18,10 @@
     "test:coverage": "jest --coverage",
     "type-check": "yarn workspaces run type-check",
     "lint": "yarn workspaces run lint --ignore-path ../../.gitignore",
-    "clean": "npx lerna clean -y && npx lerna run clean && rm -rf build node_modules"
+    "clean": "npx lerna clean -y && npx lerna run clean && rm -rf build node_modules",
+    "postinstall": "husky install",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable"
   },
   "dependencies": {
     "react": "^18.1.0",
@@ -45,8 +48,10 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-unicorn": "^42.0.0",
+    "husky": "^7.0.4",
     "jest": "^28.0.3",
     "lerna": "^4.0.0",
+    "pinst": "^3.0.0",
     "prettier": "^2.6.2",
     "ts-jest": "^27.1.4",
     "tslib": "^2.4.0",
