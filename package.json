@@ -17,7 +17,7 @@
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage",
     "type-check": "yarn workspaces run type-check",
-    "lint": "lint-staged",
+    "lint": "yarn workspaces run lint --ignore-path ../../.gitignore",
     "clean": "npx lerna clean -y && npx lerna run clean && rm -rf build node_modules",
     "prepare": "husky install"
   },
