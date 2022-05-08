@@ -3,9 +3,11 @@ const {ModuleFederationPlugin} = require('webpack').container
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExternalTemplateRemotesPlugin = require('external-remotes-plugin')
 const LiveReloadPlugin = require('webpack-livereload-plugin')
+const {dependencies} = require('./package.json')
 
 module.exports = {
-  entry: './src/index.tsx',
+  entry: './src/index',
+  cache: false,
 
   output: {
     publicPath: 'http://localhost:3000/',
@@ -61,6 +63,17 @@ module.exports = {
       filename: 'remoteEntry.js',
       remotes: {
         'map-app': 'map_app@http://localhost:3001/remoteEntry.js',
+      },
+      shared: {
+        ...dependencies,
+        react: {
+          singleton: true,
+          requiredVersion: dependencies.react,
+        },
+        'react-dom': {
+          singleton: true,
+          requiredVersion: dependencies['react-dom'],
+        },
       },
     }),
 
