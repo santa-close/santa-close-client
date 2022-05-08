@@ -5,3 +5,9 @@ declare module 'map-app/MapApp' {
 
   export default MapApp
 }
+
+declare module 'map-app/atoms' {
+  import {RecoilState} from 'recoil'
+
+  export const sampleState: RecoilState<any>
+}

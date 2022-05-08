@@ -3,9 +3,11 @@ const {ModuleFederationPlugin} = require('webpack').container
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExternalTemplateRemotesPlugin = require('external-remotes-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const {dependencies} = require('./package.json')
 
 module.exports = {
-  entry: './src/index.tsx',
+  entry: './src/index',
+  cache: false,
 
   output: {
     publicPath: 'http://localhost:3001/',
@@ -53,14 +55,20 @@ module.exports = {
       name: 'map_app',
       filename: 'remoteEntry.js',
       exposes: {
-        './MapApp': './src/App',
+        './MapApp': './src/MapApp',
+        './atoms': './src/store/atom',
       },
-      // shared: [
-      //   {
-      //     react: {singleton: true},
-      //     'react-dom': {singleton: true},
-      //   },
-      // ],
+      shared: {
+        ...dependencies,
+        react: {
+          singleton: true,
+          requiredVersion: dependencies.react,
+        },
+        'react-dom': {
+          singleton: true,
+          requiredVersion: dependencies['react-dom'],
+        },
+      },
     }),
 
     new ExternalTemplateRemotesPlugin(),
