@@ -3,13 +3,7 @@ const path = require('path')
 module.exports = {
   plugins: ['react', '@typescript-eslint', 'prettier'],
   extends: ['airbnb', 'airbnb/hooks', 'airbnb-typescript', 'prettier'],
-  ignorePatterns: [
-    '**/build',
-    '**/*.config.js',
-    '**/dist',
-    '**/node_modules',
-    '**/coverage',
-  ],
+  ignorePatterns: ['**/*.config.js'],
   parserOptions: {
     project: ['./tsconfig.json', './packages/*/tsconfig.json'],
     tsconfigRootDir: __dirname,
@@ -31,6 +25,7 @@ module.exports = {
           path.resolve(__dirname, './packages/santa_close_map'),
           path.resolve(__dirname, './packages/santa_close_frame'),
           path.resolve(__dirname, './packages/santa_close_design-system'),
+          path.resolve(__dirname, './packages/santa_close_common'),
         ],
         devDependencies: [
           '**/*.test.ts',

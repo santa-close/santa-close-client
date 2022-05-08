@@ -1,5 +1,4 @@
 .idea
-.github
 
 node_modules
 build
@@ -7,3 +6,5 @@ dist
 coverage
 
 .DS_Store
+
+packages/santa_close_common/src/graphql/index.ts

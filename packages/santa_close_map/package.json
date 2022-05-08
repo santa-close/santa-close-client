@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "santa_close_design-system": "^1.0.0",
+    "santa_close_common": "^1.0.0",
     "dotenv": "^16.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
