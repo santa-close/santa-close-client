@@ -67,7 +67,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js}": [
-      "yarn workspaces run lint --ignore-path ../../.gitignore"
+      "yarn lint"
     ]
   },
   "engines": {
