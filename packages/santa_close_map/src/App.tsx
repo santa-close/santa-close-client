@@ -5,6 +5,7 @@ import {
   bridge,
   useInitBridge,
 } from 'santa_close_common'
+import {Button, ToggleGroup} from 'santa_close_design-system'
 import MapApp from './MapApp'
 
 const TestComponent = () => {
@@ -29,6 +30,8 @@ const App = () => {
           bridge test
         </button>
         <TestComponent />
+        <Button>Hello</Button>
+        <ToggleGroup />
       </RecoilRoot>
     </ApolloProvider>
   )
