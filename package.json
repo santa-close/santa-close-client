@@ -61,8 +61,8 @@
       "packages/*"
     ],
     "nohoist": [
-      "**/santa_close_app",
-      "**/santa_close_app/**"
+      "**/react-native",
+      "**/react-native/**"
     ]
   },
   "lint-staged": {

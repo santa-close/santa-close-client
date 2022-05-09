@@ -1,27 +1,35 @@
-import {Box} from 'santa_close_design-system'
-import {ApolloProvider, useSampleQuery} from 'santa_close_common'
+import {RecoilRoot} from 'recoil'
+import {
+  ApolloProvider,
+  useSampleQuery,
+  bridge,
+  useInitBridge,
+} from 'santa_close_common'
+import MapApp from './MapApp'
 
 const TestComponent = () => {
-  const data = useSampleQuery({
+  const {data} = useSampleQuery({
     variables: {input: {price: 100}},
   })
-  console.log(data)
-  return null
+  return <h2>{data?.sample.name}</h2>
 }
 
 const App = () => {
+  const handleClick = () => {
+    bridge('navigate', {to: 'Home'}, ({bridgeId}) => {
+      console.log('callback', bridgeId)
+    })
+  }
+  useInitBridge()
   return (
     <ApolloProvider>
-      <div
-        style={{
-          margin: '10px',
-          border: '1px solid red',
-        }}
-      >
-        <h1>This is Map App of santa-close-map</h1>
-        <Box />
+      <RecoilRoot>
+        <MapApp />
+        <button type="button" onClick={handleClick}>
+          bridge test
+        </button>
         <TestComponent />
-      </div>
+      </RecoilRoot>
     </ApolloProvider>
   )
 }

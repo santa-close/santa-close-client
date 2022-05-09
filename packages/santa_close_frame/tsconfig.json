@@ -1,12 +1,11 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "module": "CommonJS",
-    "target": "ES2015",
-    "outDir": "lib",
+    "module": "esnext",
+    "jsx": "react-jsx",
+    "target": "ES2015"
+    // "outDir": "lib",
   },
-  "include": [
-    "src/**/*",
-  ],
+  "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }
