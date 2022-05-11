@@ -1,4 +1,6 @@
-schema: ${SCHEMA_PATH}
+schema:
+  - https://santa-close.github.io/introspection.json:
+      method: GET
 documents: './src/graphql/**/*.graphql'
 generates:
   src/graphql/index.ts:

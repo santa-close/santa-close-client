@@ -20,19 +20,11 @@ jobs:
           node-version: '16'
           cache: 'yarn'
 
-      - name: Checkout backend repo
-        uses: actions/checkout@v3
-        with:
-          repository: santa-close/santa-close-server
-          path: ./back
-
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
       - name: Build packages
         run: yarn build
-        env:
-          SCHEMA_PATH: ../../back/app/src/main/resources/graphql/schema.graphql
 
       - name: Lint check
         run: yarn lint
