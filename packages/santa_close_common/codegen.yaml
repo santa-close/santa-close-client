@@ -3,6 +3,9 @@ schema:
       method: GET
 documents: './src/graphql/**/*.graphql'
 generates:
+  src/graphql/schema.graphql:
+    plugins:
+      - schema-ast
   src/graphql/index.ts:
     plugins:
       - typescript
