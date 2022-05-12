@@ -5,7 +5,7 @@ import {
   bridge,
   useInitBridge,
 } from 'santa_close_common'
-import {Button, ToggleGroup} from 'santa_close_design-system'
+import {Button, ToggleGroup, globalStyles} from 'santa_close_design-system'
 import MapApp from './MapApp'
 
 const TestComponent = () => {
@@ -16,6 +16,7 @@ const TestComponent = () => {
 }
 
 const App = () => {
+  globalStyles()
   const handleClick = () => {
     bridge('navigate', {to: 'Home'}, ({bridgeId}) => {
       console.log('callback', bridgeId)
