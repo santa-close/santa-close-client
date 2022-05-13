@@ -1,4 +1,4 @@
-const Box = () => {
+export const Box = () => {
   return (
     <div
       style={{
@@ -10,5 +10,3 @@ const Box = () => {
     </div>
   )
 }
-
-export default Box
