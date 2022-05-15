@@ -4,8 +4,8 @@
   "author": "santa-close",
   "private": true,
   "scripts": {
-    "build:dev": "webpack --mode='development'",
-    "build:prod": "webpack --mode='production'",
+    "build:dev": "yarn make-types && webpack --mode='development'",
+    "build:prod": "yarn make-types && webpack --mode='production'",
     "dev": "yarn make-types && yarn run build:dev && webpack serve --mode='development'",
     "lint": "eslint './**/*.+(js|ts)?(x)'",
     "type-check": "tsc --noEmit",
