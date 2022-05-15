@@ -62,7 +62,7 @@ module.exports = {
       name: 'frame_app',
       filename: 'remoteEntry.js',
       remotes: {
-        'map-app': 'map_app@http://localhost:3001/remoteEntry.js',
+        map_app: 'map_app@http://localhost:3001/remoteEntry.js',
       },
       shared: {
         ...dependencies,

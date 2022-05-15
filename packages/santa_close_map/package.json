@@ -6,10 +6,11 @@
   "scripts": {
     "build:dev": "webpack --mode='development'",
     "build:prod": "webpack --mode='production'",
-    "dev": "yarn run build:dev && webpack serve --mode='development'",
+    "dev": "yarn make-types && yarn run build:dev && webpack serve --mode='development'",
     "lint": "eslint './**/*.+(js|ts)?(x)'",
     "type-check": "tsc --noEmit",
-    "clean": "rm -rf node_modules && rm -rf dist"
+    "clean": "rm -rf node_modules && rm -rf dist",
+    "make-types": "make-federated-types --outputDir ../../node_modules/@types/__federated_types"
   },
   "dependencies": {
     "santa_close_design-system": "^1.0.0",
@@ -34,6 +35,7 @@
     "external-remotes-plugin": "^1.0.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
     "react-refresh": "^0.13.0",
-    "typescript": "^4.6.4"
+    "typescript": "^4.6.4",
+    "@touk/federated-types": "1.1.0"
   }
 }

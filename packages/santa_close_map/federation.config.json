@@ -1,0 +1,8 @@
+{
+  "name": "map_app",
+  "exposes": {
+    "./MapApp": "./src/MapApp",
+    "./atoms": "./src/store/atom"
+  },
+  "filename": "remoteEntry.js"
+}
