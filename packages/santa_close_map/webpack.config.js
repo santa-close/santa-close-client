@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExternalTemplateRemotesPlugin = require('external-remotes-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const {dependencies} = require('./package.json')
+const federationConfig = require('./federation.config.json')
 
 module.exports = {
   entry: './src/index',
@@ -52,12 +53,8 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: 'map_app',
       filename: 'remoteEntry.js',
-      exposes: {
-        './MapApp': './src/MapApp',
-        './atoms': './src/store/atom',
-      },
+      ...federationConfig,
       shared: {
         ...dependencies,
         react: {

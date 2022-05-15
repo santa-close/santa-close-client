@@ -6,7 +6,7 @@
     "noEmit": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {

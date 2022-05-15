@@ -1,9 +1,9 @@
 import React, {ChangeEvent} from 'react'
 import {Navigator, Screen} from '@karrotframe/navigator'
 import {RecoilRoot, useRecoilState} from 'recoil'
-import {sampleState} from 'map-app/atoms'
+import {sampleState} from 'map_app/atoms'
 
-const MapApp = React.lazy(() => import('map-app/MapApp'))
+const MapApp = React.lazy(() => import('map_app/MapApp'))
 
 const Page1 = () => {
   return <h1>Here is PAGE1</h1>
