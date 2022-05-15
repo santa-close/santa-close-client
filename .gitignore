@@ -8,3 +8,4 @@ coverage
 .DS_Store
 
 packages/santa_close_common/src/graphql/index.ts
+packages/santa_close_common/src/graphql/schema.graphql

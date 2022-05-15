@@ -1,4 +1,4 @@
 module.exports = {
-  schema: ['http://localhost:4000/graphql'],
+  schema: ['packages/santa_close_common/src/graphql/schema.graphql'],
   documents: ['**/*.{graphql,js,ts,jsx,tsx}'],
 }
