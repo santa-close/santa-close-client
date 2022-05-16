@@ -2,6 +2,7 @@ import React, {ChangeEvent} from 'react'
 import {Navigator, Screen} from '@karrotframe/navigator'
 import {RecoilRoot, useRecoilState} from 'recoil'
 import {sampleState} from 'map_app/atoms'
+import {UrqlProvider} from 'santa_close_common'
 
 const MapApp = React.lazy(() => import('map_app/MapApp'))
 
@@ -43,13 +44,15 @@ const MapAppContainer = () => {
 
 const App = () => {
   return (
-    <RecoilRoot>
-      <Navigator onClose={console.log}>
-        <Screen component={MapAppContainer} path="/" />
-        <Screen component={Page1} path="/page1" />
-        <Screen component={Page2} path="/page2" />
-      </Navigator>
-    </RecoilRoot>
+    <UrqlProvider>
+      <RecoilRoot>
+        <Navigator onClose={console.log}>
+          <Screen component={MapAppContainer} path="/" />
+          <Screen component={Page1} path="/page1" />
+          <Screen component={Page2} path="/page2" />
+        </Navigator>
+      </RecoilRoot>
+    </UrqlProvider>
   )
 }
 
