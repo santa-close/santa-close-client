@@ -9,3 +9,5 @@ coverage
 
 packages/santa_close_common/src/graphql/index.ts
 packages/santa_close_common/src/graphql/schema.graphql
+
+packages/santa_close_design-system/src/components/Icon/iconMap.ts
