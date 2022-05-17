@@ -1,18 +1,28 @@
+import {Suspense} from 'react'
 import {RecoilRoot} from 'recoil'
 import {
-  ApolloProvider,
-  useSampleQuery,
   bridge,
   useInitBridge,
+  UrqlProvider,
+  useSampleQuery,
 } from 'santa_close_common'
 import {Button, ToggleGroup, globalStyles} from 'santa_close_design-system'
 import MapApp from './MapApp'
 
 const TestComponent = () => {
-  const {data} = useSampleQuery({
+  const [{data}, reexcuteQuery] = useSampleQuery({
     variables: {input: {price: 100}},
   })
-  return <h2>{data?.sample.name}</h2>
+  console.log(data)
+  console.log(reexcuteQuery)
+  return (
+    <>
+      <h2>{data?.sample.name}</h2>
+      <button type="button" onClick={reexcuteQuery}>
+        refetch
+      </button>
+    </>
+  )
 }
 
 const App = () => {
@@ -24,17 +34,19 @@ const App = () => {
   }
   useInitBridge()
   return (
-    <ApolloProvider>
+    <UrqlProvider>
       <RecoilRoot>
         <MapApp />
         <button type="button" onClick={handleClick}>
           bridge test
         </button>
-        <TestComponent />
+        <Suspense fallback={<h1>......loading</h1>}>
+          <TestComponent />
+        </Suspense>
         <Button>Hello</Button>
         <ToggleGroup />
       </RecoilRoot>
-    </ApolloProvider>
+    </UrqlProvider>
   )
 }
 
