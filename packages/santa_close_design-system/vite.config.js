@@ -1,9 +1,15 @@
-const react = require('@vitejs/plugin-react')
-const path = require('path')
-const {defineConfig} = require('vite')
+import svgr from 'vite-plugin-svgr'
+import react from '@vitejs/plugin-react'
+import path from 'path'
+import {defineConfig} from 'vite'
 
 module.exports = defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    svgr({
+      exportAsDefault: true,
+    }),
+  ],
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),

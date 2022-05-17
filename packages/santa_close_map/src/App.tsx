@@ -7,6 +7,7 @@ import {
   useSampleQuery,
 } from 'santa_close_common'
 import {Button, ToggleGroup, globalStyles} from 'santa_close_design-system'
+import IconTest from './components/IconTest'
 import MapApp from './MapApp'
 
 const TestComponent = () => {
@@ -37,6 +38,7 @@ const App = () => {
     <UrqlProvider>
       <RecoilRoot>
         <MapApp />
+        <IconTest />
         <button type="button" onClick={handleClick}>
           bridge test
         </button>

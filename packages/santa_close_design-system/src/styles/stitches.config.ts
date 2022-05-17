@@ -18,6 +18,7 @@ export const {
       gray02: '#828282',
       gray03: '#BDBDBD',
       gray04: '#E0E0E0',
+      white: '#FFFFFF',
     },
     radii: {
       1: '8px',
@@ -70,3 +71,5 @@ export const {
     }),
   },
 })
+
+export type Theme = typeof theme
