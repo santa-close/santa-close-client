@@ -24,7 +24,7 @@ const MapApp = () => {
       <h1>Map App with Recoil</h1>
       <input value={state} onChange={handleStateChange} />
       <p>echo: {state}</p>
-      <Box />
+      <Box bg="sub">test</Box>
     </div>
   )
 }

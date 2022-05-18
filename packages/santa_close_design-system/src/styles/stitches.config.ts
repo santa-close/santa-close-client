@@ -1,4 +1,4 @@
-import {createStitches, PropertyValue, ScaleValue} from '@stitches/react'
+import {createStitches} from '@stitches/react'
 
 export const {
   styled,
@@ -10,6 +10,7 @@ export const {
   createTheme,
   config,
 } = createStitches({
+  prefix: 'radix',
   theme: {
     colors: {
       main: '#27B492',
@@ -23,7 +24,17 @@ export const {
     radii: {
       1: '8px',
       2: '16px',
-      round: '50%',
+      half: '50%',
+      full: '100%',
+    },
+    borderWidths: {
+      1: '1px',
+      2: '2px',
+      3: '3px',
+    },
+    borderStyles: {
+      solid: 'solid',
+      dotted: 'dotted',
     },
     fonts: {
       untitled:
@@ -41,8 +52,15 @@ export const {
       bold: '700',
     },
     space: {
+      0: '100%',
       1: '4px',
       2: '8px',
+      3: '12px',
+      4: '16px',
+      5: '24px',
+      6: '32px',
+      7: '48px',
+      8: '64px',
     },
     sizes: {
       1: '20px',
@@ -55,20 +73,6 @@ export const {
       4: '400',
       max: '999',
     },
-  },
-  utils: {
-    // FIXME: 유틸 작동 안하는중 - 원인파악중
-    // An abbreviated property for border-radius
-    br: (value: ScaleValue<'borderRadius'>) => ({borderRadius: value}),
-    // An abbreviated property for border-radius
-    bgColor: (value: ScaleValue<'colors'>) => ({
-      backgroundColor: value,
-    }),
-    // A property for applying width/height together
-    size: (value: PropertyValue<'width'>) => ({
-      width: value,
-      height: value,
-    }),
   },
 })
 
