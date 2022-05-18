@@ -1,8 +1,7 @@
-import {FC} from 'react'
 import {BoxComponent} from './style'
 import {BoxPros} from './type'
 
-export const Box: FC<BoxPros> = ({
+export const Box = ({
   children,
   as,
   bg,
@@ -20,7 +19,7 @@ export const Box: FC<BoxPros> = ({
   h,
   size,
   ...css
-}) => (
+}: BoxPros) => (
   <BoxComponent
     as={as}
     bg={bg}
