@@ -1,22 +1,30 @@
 import {CSSProperties} from '@stitches/react'
-import {Theme, theme} from '../styles'
+import {DefaultTheme, theme} from '../styles'
 
-const createMultipleCSSProp = (cssProp: (keyof CSSProperties)[], value) =>
+type CSSPropertyKeys = keyof CSSProperties
+
+const createMultipleCSSProp = <V>(cssProp: CSSPropertyKeys[], value: V) =>
   Object.fromEntries(cssProp.map((prop) => [prop, value]))
 
-export const generateVariants = <T extends keyof Theme>(
-  cssProp: keyof CSSProperties | (keyof CSSProperties)[],
+export const generateVariants = <
+  C extends CSSPropertyKeys,
+  T extends keyof DefaultTheme,
+>(
+  cssProp: C | C[],
   target: T,
 ) => {
-  const isMultiple = Array.isArray(cssProp) && cssProp.length > 1
-
   return Object.fromEntries(
-    Object.entries(theme[target]).map(([key, value]) => {
-      const returnValue = isMultiple
-        ? createMultipleCSSProp(cssProp, value)
-        : {[cssProp as string]: value}
+    Object.entries(theme[target]).map(
+      ([key, value]: [
+        keyof DefaultTheme[T] | string,
+        DefaultTheme[T][keyof DefaultTheme[T]],
+      ]) => {
+        const returnValue = Array.isArray(cssProp)
+          ? createMultipleCSSProp<typeof value>(cssProp, value)
+          : {[cssProp]: value}
 
-      return [key, returnValue]
-    }),
+        return [key, returnValue]
+      },
+    ),
   )
 }

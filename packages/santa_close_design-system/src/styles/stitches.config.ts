@@ -76,4 +76,16 @@ export const {
   },
 })
 
+type DefaultThemeIndex =
+  | 'colors'
+  | 'radii'
+  | 'borderWidths'
+  | 'borderStyles'
+  | 'fonts'
+  | 'fontSizes'
+  | 'fontWeights'
+  | 'space'
+  | 'sizes'
+  | 'zIndices'
 export type Theme = typeof theme
+export type DefaultTheme = Pick<Theme, DefaultThemeIndex>
