@@ -1,12 +1,7 @@
-export const Box = () => {
-  return (
-    <div
-      style={{
-        margin: '10px',
-        border: '1px solid green',
-      }}
-    >
-      <h1>This is Box component of santa_close_design-system</h1>
-    </div>
-  )
-}
+import {BoxComponent} from './style'
+import {BoxProps} from './type'
+
+export const Box = ({children, ...props}: Partial<BoxProps>) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  <BoxComponent {...props}>{children}</BoxComponent>
+)
