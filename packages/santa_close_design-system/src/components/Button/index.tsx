@@ -1,11 +1,17 @@
-import {styled} from '@stitches/react'
+import {MouseEventHandler, ReactNode} from 'react'
+import {CSS} from '@stitches/react'
+import {sizeVariants, ButtonComponent, colorVariants, variants} from './style'
 
-export const Button = styled('button', {
-  borderRadius: '$2',
-  padding: '$2',
-  fontSize: '$1',
-  backgroundColor: '$gray03',
-  '&:hover': {
-    backgroundColor: '$gray04',
-  },
-})
+interface ButtonProps {
+  children: ReactNode
+  css: CSS
+  onClick: MouseEventHandler
+  size: keyof typeof sizeVariants
+  variant: keyof typeof variants
+  color: keyof typeof colorVariants
+}
+
+export const Button = ({children, ...props}: Partial<ButtonProps>) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  <ButtonComponent {...props}>{children}</ButtonComponent>
+)

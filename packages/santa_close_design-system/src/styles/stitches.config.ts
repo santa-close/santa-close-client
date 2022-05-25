@@ -10,7 +10,6 @@ export const {
   createTheme,
   config,
 } = createStitches({
-  prefix: 'radix',
   theme: {
     colors: {
       main: '#27B492',
@@ -52,7 +51,6 @@ export const {
       bold: '700',
     },
     space: {
-      0: '100%',
       1: '4px',
       2: '8px',
       3: '12px',
@@ -61,10 +59,18 @@ export const {
       6: '32px',
       7: '48px',
       8: '64px',
+      full: '100%',
     },
     sizes: {
-      1: '20px',
-      2: '24px',
+      1: '4px',
+      2: '8px',
+      3: '12px',
+      4: '16px',
+      6: '24px',
+      7: '32px',
+      8: '48px',
+      9: '64px',
+      full: '100%',
     },
     zIndices: {
       1: '100',
