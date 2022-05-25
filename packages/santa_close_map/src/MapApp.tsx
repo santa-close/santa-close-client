@@ -1,6 +1,6 @@
 import {ChangeEvent} from 'react'
 import {useRecoilState} from 'recoil'
-import {Box} from 'santa_close_design-system'
+import {Box, Button} from 'santa_close_design-system'
 import {sampleState} from './store'
 
 const MapApp = () => {
@@ -32,6 +32,12 @@ const MapApp = () => {
       >
         test
       </Box>
+      <Button size="xs">button</Button>
+      <Button size="sm">button</Button>
+      <Button size="md">button</Button>
+      <Button size="lg" variant="outline" color="gray01">
+        button
+      </Button>
     </div>
   )
 }
