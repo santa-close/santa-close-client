@@ -22,9 +22,9 @@ export interface BoxProps
   border: keyof Theme['borderWidths']
   bs: keyof Theme['borderStyles']
   bc: keyof Theme['colors']
-  w: keyof Theme['space']
-  h: keyof Theme['space']
-  size: keyof Theme['space']
+  w: keyof Theme['sizes']
+  h: keyof Theme['sizes']
+  size: keyof Theme['sizes']
   css: CSS
   onClick: MouseEventHandler
 }
