@@ -18,8 +18,8 @@ export const BoxComponent = styled('div', {
     bs: generateVariants('borderStyle', 'borderStyles'),
     bc: generateVariants('borderColor', 'colors'),
 
-    w: generateVariants('width', 'space'),
-    h: generateVariants('height', 'space'),
-    size: generateVariants(['width', 'height'], 'space'),
+    w: generateVariants('width', 'sizes'),
+    h: generateVariants('height', 'sizes'),
+    size: generateVariants(['width', 'height'], 'sizes'),
   },
 })
