@@ -6,7 +6,13 @@ import {
   UrqlProvider,
   useSampleQuery,
 } from 'santa_close_common'
-import {Button, ToggleGroup, globalStyles} from 'santa_close_design-system'
+import {
+  Button,
+  ToggleGroup,
+  globalStyles,
+  Box,
+  Icon,
+} from 'santa_close_design-system'
 import IconTest from './components/IconTest'
 import MapApp from './MapApp'
 
@@ -45,8 +51,92 @@ const App = () => {
         <Suspense fallback={<h1>......loading</h1>}>
           <TestComponent />
         </Suspense>
-        <Button>Hello</Button>
         <ToggleGroup />
+
+        <Box
+          bg="sub"
+          onClick={(e) => {
+            console.log(e)
+          }}
+        >
+          test
+        </Box>
+        <Button
+          size="md"
+          leftIcon={<Icon size="16" name="bookmark" color="sub" />}
+        >
+          button
+        </Button>
+        <Button size="md" rightIcon={<Icon name="close" />}>
+          button
+        </Button>
+        <Button
+          variant="outline"
+          color="main"
+          size="md"
+          leftIcon={<Icon size="16" name="bookmark" color="sub" />}
+          rightIcon={<Icon name="close" />}
+        >
+          button
+        </Button>
+        <Button size="sm" color="sub">
+          button
+        </Button>
+        <Button size="sm" variant="outline" color="main">
+          button
+        </Button>
+        <Button size="sm" variant="outline" color="sub">
+          button
+        </Button>
+        <Button size="sm" variant="outline" color="gray01">
+          button
+        </Button>
+        <Button size="sm" variant="outline" color="gray02">
+          button
+        </Button>
+        <Button size="sm" variant="outline" color="gray03">
+          button
+        </Button>
+        <Button size="sm" variant="outline" color="gray04">
+          button
+        </Button>
+        <Button size="sm" variant="outline" color="white">
+          button
+        </Button>
+        <Button size="lg" variant="solid" color="sub">
+          button
+        </Button>
+        <Button size="lg" variant="solid" color="kakao01">
+          button
+        </Button>
+        <Button size="lg" variant="solid" color="kakao02">
+          button
+        </Button>
+        <Button size="lg" variant="solid" color="apple" />
+        <Button size="lg" variant="solid" color="sub">
+          button
+        </Button>
+        <Button size="lg" variant="solid" color="sub">
+          button
+        </Button>
+        <Button size="lg" variant="outline">
+          button
+        </Button>
+        <Button size="md" variant="ghost">
+          button
+        </Button>
+        <Box w="full" h={7}>
+          <Button
+            color="kakao01"
+            size="full"
+            leftIcon={<Icon name="bookmark" />}
+          >
+            {/* TODO: Typography component 구현 필요 */}
+            <p style={{fontSize: 14, fontWeight: 'bold'}}>
+              카카오톡으로 1초만에 시작하기
+            </p>
+          </Button>
+        </Box>
       </RecoilRoot>
     </UrqlProvider>
   )
