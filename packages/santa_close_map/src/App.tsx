@@ -12,6 +12,7 @@ import {
   globalStyles,
   Box,
   Icon,
+  Typography,
 } from 'santa_close_design-system'
 import IconTest from './components/IconTest'
 import MapApp from './MapApp'
@@ -132,9 +133,16 @@ const App = () => {
             leftIcon={<Icon name="bookmark" />}
           >
             {/* TODO: Typography component 구현 필요 */}
-            <p style={{fontSize: 14, fontWeight: 'bold'}}>
+            <Typography size={2} weight="bold" color="gray01">
               카카오톡으로 1초만에 시작하기
-            </p>
+            </Typography>
+          </Button>
+        </Box>
+        <Box w="full" h={7}>
+          <Button color="apple" size="full" leftIcon={<Icon name="bookmark" />}>
+            <Typography size={2} weight="bold" color="white">
+              Apple로 계속하기
+            </Typography>
           </Button>
         </Box>
       </RecoilRoot>
