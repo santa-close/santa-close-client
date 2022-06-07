@@ -15,6 +15,7 @@ export interface FlexProps {
   justify: keyof typeof justifyVariants
   wrap: keyof typeof wrapVariants
   gap: keyof Theme['space']
+  isGrow: boolean
   css: CSS
   onClick: MouseEventHandler
 }

@@ -84,14 +84,7 @@ const App = () => {
         <Button size="sm" color="sub">
           button
         </Button>
-
-        <Flex direction="column">
-          <Icon name="bookmark" />
-          <Icon name="bookmark" />
-          <Icon name="bookmark" />
-        </Flex>
-
-        <Flex direction="column">
+        <Flex gap={8} isGrow>
           <Button size="sm" variant="outline" color="main">
             button
           </Button>

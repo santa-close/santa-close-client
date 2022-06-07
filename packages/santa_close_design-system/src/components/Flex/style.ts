@@ -8,11 +8,20 @@ import {
 } from './variants'
 
 export const FlexComponent = styled('div', {
+  display: 'flex',
+
   variants: {
     direction: directionVariants,
     align: alignVariants,
     justify: justifyVariants,
     wrap: wrapVariants,
+    isGrow: {
+      true: {
+        '& > *': {
+          flexGrow: 1,
+        },
+      },
+    },
     gap: generateVariants('gap', 'space'),
   },
   defaultVariants: {
