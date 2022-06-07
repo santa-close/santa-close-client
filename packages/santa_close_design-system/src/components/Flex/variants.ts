@@ -54,3 +54,11 @@ export const wrapVariants = {
     flexWrap: 'wrap',
   },
 }
+
+export const isGrowVariants = {
+  true: {
+    '& > *': {
+      flexGrow: 1,
+    },
+  },
+}

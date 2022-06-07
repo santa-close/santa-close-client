@@ -6,6 +6,7 @@ import {
   alignVariants,
   justifyVariants,
   wrapVariants,
+  isGrowVariants,
 } from './variants'
 
 export interface FlexProps {
@@ -15,7 +16,7 @@ export interface FlexProps {
   justify: keyof typeof justifyVariants
   wrap: keyof typeof wrapVariants
   gap: keyof Theme['space']
-  isGrow: boolean
+  isGrow: keyof typeof isGrowVariants
   css: CSS
   onClick: MouseEventHandler
 }

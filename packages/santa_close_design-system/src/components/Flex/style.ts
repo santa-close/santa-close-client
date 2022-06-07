@@ -5,6 +5,7 @@ import {
   alignVariants,
   justifyVariants,
   wrapVariants,
+  isGrowVariants,
 } from './variants'
 
 export const FlexComponent = styled('div', {
@@ -15,13 +16,7 @@ export const FlexComponent = styled('div', {
     align: alignVariants,
     justify: justifyVariants,
     wrap: wrapVariants,
-    isGrow: {
-      true: {
-        '& > *': {
-          flexGrow: 1,
-        },
-      },
-    },
+    isGrow: isGrowVariants,
     gap: generateVariants('gap', 'space'),
   },
   defaultVariants: {
