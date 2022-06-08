@@ -13,6 +13,7 @@ import {
   Box,
   Icon,
   Typography,
+  Flex,
 } from 'santa_close_design-system'
 import IconTest from './components/IconTest'
 import MapApp from './MapApp'
@@ -83,27 +84,30 @@ const App = () => {
         <Button size="sm" color="sub">
           button
         </Button>
-        <Button size="sm" variant="outline" color="main">
-          button
-        </Button>
-        <Button size="sm" variant="outline" color="sub">
-          button
-        </Button>
-        <Button size="sm" variant="outline" color="gray01">
-          button
-        </Button>
-        <Button size="sm" variant="outline" color="gray02">
-          button
-        </Button>
-        <Button size="sm" variant="outline" color="gray03">
-          button
-        </Button>
-        <Button size="sm" variant="outline" color="gray04">
-          button
-        </Button>
-        <Button size="sm" variant="outline" color="white">
-          button
-        </Button>
+        <Flex gap={8} isGrow>
+          <Button size="sm" variant="outline" color="main">
+            button
+          </Button>
+          <Button size="sm" variant="outline" color="sub">
+            button
+          </Button>
+          <Button size="sm" variant="outline" color="gray01">
+            button
+          </Button>
+          <Button size="sm" variant="outline" color="gray02">
+            button
+          </Button>
+          <Button size="sm" variant="outline" color="gray03">
+            button
+          </Button>
+          <Button size="sm" variant="outline" color="gray04">
+            button
+          </Button>
+          <Button size="sm" variant="outline" color="white">
+            button
+          </Button>
+        </Flex>
+
         <Button size="lg" variant="solid" color="sub">
           button
         </Button>
