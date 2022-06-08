@@ -28,7 +28,6 @@ export const Button = ({
   rightIcon,
   ...props
 }: Partial<ButtonProps>) => (
-  // eslint-disable-next-line react/jsx-props-no-spreading
   <ButtonComponent {...props}>
     <Wrapper>
       {leftIcon}

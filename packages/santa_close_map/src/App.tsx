@@ -132,7 +132,6 @@ const App = () => {
             size="full"
             leftIcon={<Icon name="bookmark" />}
           >
-            {/* TODO: Typography component 구현 필요 */}
             <Typography size={2} weight="bold" color="gray01">
               카카오톡으로 1초만에 시작하기
             </Typography>
