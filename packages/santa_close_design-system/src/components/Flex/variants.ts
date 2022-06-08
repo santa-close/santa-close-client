@@ -61,4 +61,5 @@ export const isGrowVariants = {
       flexGrow: 1,
     },
   },
+  false: {},
 }
