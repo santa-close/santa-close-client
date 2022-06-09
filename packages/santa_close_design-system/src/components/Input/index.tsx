@@ -1,35 +1,29 @@
-import {MouseEventHandler, ReactNode} from 'react'
+import {ReactNode, ChangeEvent} from 'react'
 import {CSS} from '@stitches/react'
 import {InputComponent, InputContainer} from './style'
-import {buttonVariants, colorVariants, sizeVariants} from './variants'
 import {Flex} from '../Flex'
 
 interface InputProps {
   css: CSS
-  onClick: MouseEventHandler
-  size: keyof typeof sizeVariants
-  variant: keyof typeof buttonVariants
-  color: keyof typeof colorVariants
-  // type: HTMLInputTypeAttribute
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void
   placeholder: string
   children: ReactNode
-  leftIcon: ReactNode
-  rightIcon: ReactNode
+  leftSocket: ReactNode
+  rightSocket: ReactNode
 }
 
 export const Input = ({
-  placeholder,
+  css,
   children,
-  leftIcon,
-  rightIcon,
-  size,
+  leftSocket,
+  rightSocket,
   ...props
 }: Partial<InputProps>) => (
-  <InputContainer size={size}>
+  <InputContainer css={css}>
     <Flex justify="between" align="center" gap="2">
-      {leftIcon}
-      <InputComponent {...props} placeholder={placeholder} />
-      {rightIcon}
+      {leftSocket}
+      <InputComponent {...props} />
+      {rightSocket}
     </Flex>
   </InputContainer>
 )

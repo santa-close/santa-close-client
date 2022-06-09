@@ -232,5 +232,5 @@ export const compoundVariants = [
 
 export const defaultVariants = {
   size: 'md',
-  variant: 'solid',
+  // variant: 'solid',
 }
