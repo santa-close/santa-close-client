@@ -14,6 +14,7 @@ import {
   Icon,
   Typography,
   Flex,
+  Divider,
 } from 'santa_close_design-system'
 import IconTest from './components/IconTest'
 import MapApp from './MapApp'
@@ -130,6 +131,21 @@ const App = () => {
         <Button size="md" variant="ghost">
           button
         </Button>
+        <Divider />
+        <Divider
+          color="main"
+          bs="solid"
+          direction="horizontal"
+          size="full"
+          w={3}
+        />
+        <Divider
+          color="gray01"
+          bs="dotted"
+          direction="vertical"
+          w={3}
+          size="half"
+        />
         <Box w="full" h={7}>
           <Button
             color="kakao01"

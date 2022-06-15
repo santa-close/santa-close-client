@@ -15,9 +15,11 @@ export const {
       main: '#27B492',
       sub: '#318CB5',
       gray01: '#333333',
-      gray02: '#828282',
-      gray03: '#BDBDBD',
-      gray04: '#E0E0E0',
+      gray02: '#4F4F4F',
+      gray03: '#828282',
+      gray04: '#BDBDBD',
+      gray05: '#E0E0E0',
+      gray06: '#F2F2F2',
       white: '#FFFFFF',
       kakao01: '#FFDC00',
       kakao02: '#3C1E1E',
@@ -43,6 +45,7 @@ export const {
     borderStyles: {
       solid: 'solid',
       dotted: 'dotted',
+      dashed: 'dashed',
     },
     fonts: {
       pretendard:
