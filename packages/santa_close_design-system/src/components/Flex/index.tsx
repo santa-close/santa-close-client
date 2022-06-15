@@ -1,10 +1,14 @@
-import {PropsWithChildren} from 'react'
+import {ForwardedRef, forwardRef, PropsWithChildren} from 'react'
 import {FlexComponent} from './style'
 import {FlexProps} from './type'
 
-export const Flex = ({
-  children,
-  ...props
-}: PropsWithChildren<Partial<FlexProps>>) => (
-  <FlexComponent {...props}>{children}</FlexComponent>
+export const Flex = forwardRef(
+  (
+    {children, ...props}: PropsWithChildren<Partial<FlexProps>>,
+    ref: ForwardedRef<HTMLDivElement>,
+  ) => (
+    <FlexComponent ref={ref} {...props}>
+      {children}
+    </FlexComponent>
+  ),
 )

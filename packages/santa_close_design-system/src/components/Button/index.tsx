@@ -1,8 +1,8 @@
-import {MouseEventHandler, ReactNode} from 'react'
-import {CSS, styled} from '@stitches/react'
+import {ForwardedRef, forwardRef, MouseEventHandler, ReactNode} from 'react'
+import {CSS} from '@stitches/react'
 import {ButtonComponent} from './style'
 import {buttonVariants, colorVariants, sizeVariants} from './variants'
-import {Box} from '../Box'
+import {Flex} from '../Flex'
 
 interface ButtonProps {
   css: CSS
@@ -15,24 +15,17 @@ interface ButtonProps {
   rightIcon: ReactNode
 }
 
-// TODO: Flex component 구현 후 교체
-const Wrapper = styled(Box, {
-  display: 'flex',
-  gap: '8px',
-  alignItems: 'center',
-})
-
-export const Button = ({
-  children,
-  leftIcon,
-  rightIcon,
-  ...props
-}: Partial<ButtonProps>) => (
-  <ButtonComponent {...props}>
-    <Wrapper>
-      {leftIcon}
-      {children}
-      {rightIcon}
-    </Wrapper>
-  </ButtonComponent>
+export const Button = forwardRef(
+  (
+    {children, leftIcon, rightIcon, ...props}: Partial<ButtonProps>,
+    ref: ForwardedRef<HTMLButtonElement>,
+  ) => (
+    <ButtonComponent ref={ref} {...props}>
+      <Flex align="center" gap="2">
+        {leftIcon}
+        {children}
+        {rightIcon}
+      </Flex>
+    </ButtonComponent>
+  ),
 )
