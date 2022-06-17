@@ -64,6 +64,7 @@ const App = () => {
         >
           test
         </Box>
+
         <Button
           size="md"
           leftIcon={<Icon size="16" name="bookmark" color="sub" />}
@@ -131,14 +132,12 @@ const App = () => {
         <Button size="md" variant="ghost">
           button
         </Button>
+        <Typography>TEST</Typography>
         <Divider />
-        <Divider
-          color="main"
-          bs="solid"
-          direction="horizontal"
-          size="full"
-          w={3}
-        />
+        <Typography size={1} weight="medium">
+          TEST
+        </Typography>
+        <Divider color="main" bs="dashed" direction="horizontal" w={3} />
         <Divider
           color="gray01"
           bs="dotted"

@@ -4,7 +4,7 @@ import {Theme} from '../../styles'
 
 export interface TypoProps {
   children: ReactNode
-  as?:
+  as:
     | 'h1'
     | 'h2'
     | 'h3'
@@ -19,5 +19,5 @@ export interface TypoProps {
   size: keyof Theme['fontSizes']
   weight: keyof Theme['fontWeights']
   color: keyof Theme['colors']
-  css?: CSS
+  css: CSS
 }
