@@ -8,4 +8,9 @@ export const TypoComponent = styled('span', {
     weight: generateVariants('fontWeight', 'fontWeights'),
     color: generateVariants('color', 'colors'),
   },
+  defaultVariants: {
+    size: '3',
+    weight: 'regular',
+    color: 'gray01',
+  },
 })
