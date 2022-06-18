@@ -1,16 +1,9 @@
-import {
-  ReactNode,
-  MouseEventHandler,
-  ElementType,
-  AllHTMLAttributes,
-} from 'react'
-import {CSS} from '@stitches/react'
+import {ReactNode, MouseEventHandler} from 'react'
 import {Theme} from '../../styles'
+import {DefaultComponentProps} from '../../interface'
 
-export interface BoxProps
-  extends Omit<AllHTMLAttributes<HTMLElement>, 'as' | 'size'> {
+export interface BoxProps extends DefaultComponentProps {
   children: ReactNode
-  as: ElementType
   bg: keyof Theme['colors']
   p: keyof Theme['space']
   px: keyof Theme['space']
@@ -25,6 +18,5 @@ export interface BoxProps
   w: keyof Theme['sizes']
   h: keyof Theme['sizes']
   size: keyof Theme['sizes']
-  css: CSS
   onClick: MouseEventHandler
 }

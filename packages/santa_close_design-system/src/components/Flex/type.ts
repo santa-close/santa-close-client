@@ -1,5 +1,4 @@
-import {ElementType, MouseEventHandler} from 'react'
-import {CSS} from '@stitches/react'
+import {MouseEventHandler} from 'react'
 import {Theme} from '../../styles/stitches.config'
 import {
   directionVariants,
@@ -7,15 +6,14 @@ import {
   justifyVariants,
   wrapVariants,
 } from './variants'
+import {DefaultComponentProps} from '../../interface'
 
-export interface FlexProps {
-  as: ElementType
+export interface FlexProps extends DefaultComponentProps {
   direction: keyof typeof directionVariants
   align: keyof typeof alignVariants
   justify: keyof typeof justifyVariants
   wrap: keyof typeof wrapVariants
   gap: keyof Theme['space']
   isGrow: boolean
-  css: CSS
   onClick: MouseEventHandler
 }

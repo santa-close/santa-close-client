@@ -1,10 +1,9 @@
 import {ReactNode} from 'react'
-import {CSS} from '@stitches/react'
 import {Theme} from '../../styles'
+import {DefaultComponentProps} from '../../interface'
 
-export interface TypoProps {
-  children: ReactNode
-  as:
+export interface TypoProps
+  extends DefaultComponentProps<
     | 'h1'
     | 'h2'
     | 'h3'
@@ -16,8 +15,12 @@ export interface TypoProps {
     | 'i'
     | 'u'
     | 'del'
+    | 'em'
+    | 'strong'
+    | 'pre'
+  > {
+  children: ReactNode
   size: keyof Theme['fontSizes']
   weight: keyof Theme['fontWeights']
   color: keyof Theme['colors']
-  css: CSS
 }
