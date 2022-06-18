@@ -42,5 +42,6 @@ module.exports = {
     'arrow-body-style': ['off'],
     'react/require-default-props': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
   },
 }

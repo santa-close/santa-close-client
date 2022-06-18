@@ -17,6 +17,7 @@ import {
   Divider,
 } from 'santa_close_design-system'
 import IconTest from './components/IconTest'
+import {RatingSample} from './components/RatingSample'
 import MapApp from './MapApp'
 
 const TestComponent = () => {
@@ -55,7 +56,7 @@ const App = () => {
           <TestComponent />
         </Suspense>
         <ToggleGroup />
-
+        <RatingSample />
         <Box
           bg="sub"
           onClick={(e) => {

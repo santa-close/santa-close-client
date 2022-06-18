@@ -37,7 +37,7 @@ export const DividerComponent = styled('hr', {
   '&[data-direction=vertical]': makeVairants('vertical'),
   '&[data-direction=horizontal]': makeVairants('horizontal'),
   defaultVariants: {
-    color: 'gray06',
+    color: 'gray07',
     bs: 'solid',
   },
 })
