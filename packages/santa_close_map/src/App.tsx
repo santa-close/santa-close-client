@@ -47,6 +47,7 @@ const App = () => {
   return (
     <UrqlProvider>
       <RecoilRoot>
+        This is Map App of santa-close-map
         <MapApp />
         <IconTest />
         <button type="button" onClick={handleClick}>
@@ -65,7 +66,6 @@ const App = () => {
         >
           test
         </Box>
-
         <Button
           size="md"
           leftIcon={<Icon size="16" name="bookmark" color="sub" />}
@@ -110,7 +110,6 @@ const App = () => {
             button
           </Button>
         </Flex>
-
         <Button size="lg" variant="solid" color="sub">
           button
         </Button>
