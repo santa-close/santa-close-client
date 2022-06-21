@@ -20,15 +20,10 @@
 > graphql 스키마 validation 필요시 [GraphQL extension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql) 설치 & 백엔드 서버 띄운채로 작업
 
 ```shell
-# root
-yarn install
+# dependency 설치
+$ yarn
 
-# common packages build & watch
-yarn dev:watch
-
-# map_app 빌드 및 개발서버 시작(localhost:3001)
-yarn dev:map
-
-# frame_app 빌드 및 개발서버 시작(localhost:3000)
-yarn dev:frame
+# dev:watch & dev:map & dev:frame 스크립트 병렬 실행
+# argument: map
+$ yarn dev:web map
 ```

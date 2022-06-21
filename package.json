@@ -5,7 +5,6 @@
   "author": "santa-close",
   "private": true,
   "scripts": {
-    "sc": "node run.js",
     "ds": "yarn workspace santa_close_design-system",
     "frame": "yarn workspace santa_close_frame",
     "map": "yarn workspace santa_close_map",
