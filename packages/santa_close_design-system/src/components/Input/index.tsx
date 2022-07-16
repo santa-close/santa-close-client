@@ -1,29 +1,41 @@
 import {ReactNode, ChangeEvent} from 'react'
 import {CSS} from '@stitches/react'
-import {InputComponent, InputContainer} from './style'
 import {Flex} from '../Flex'
+import {InputComponent, InputOuterComponent} from './style'
+import {innerSizeVariants, outerSizeVariants} from './variants'
 
 interface InputProps {
-  css: CSS
+  css?: CSS
+  size?: keyof typeof innerSizeVariants & keyof typeof outerSizeVariants
+  isDisabled?: boolean
+  placeholder?: string
+  leftSocket?: ReactNode
+  rightSocket?: ReactNode
   onChange: (event: ChangeEvent<HTMLInputElement>) => void
-  placeholder: string
-  children: ReactNode
-  leftSocket: ReactNode
-  rightSocket: ReactNode
+  value: string | number
 }
 
 export const Input = ({
   css,
-  children,
   leftSocket,
   rightSocket,
-  ...props
-}: Partial<InputProps>) => (
-  <InputContainer css={css}>
+  size,
+  isDisabled = false,
+  onChange,
+  value = '',
+  placeholder = '',
+}: InputProps) => (
+  <InputOuterComponent css={css} size={size} isDisabled={isDisabled}>
     <Flex justify="between" align="center" gap="2">
       {leftSocket}
-      <InputComponent {...props} />
+      <InputComponent
+        size={size}
+        isDisabled={isDisabled}
+        onChange={isDisabled ? undefined : onChange}
+        value={value}
+        placeholder={placeholder}
+      />
       {rightSocket}
     </Flex>
-  </InputContainer>
+  </InputOuterComponent>
 )

@@ -10,6 +10,7 @@ import {
   Divider,
 } from 'santa_close_design-system'
 import IconTest from './IconTest'
+import {InputTest} from './InputTest'
 import {RatingSample} from './RatingSample'
 
 const TestComponent = () => {
@@ -38,6 +39,7 @@ export const ComponentTest = () => {
 
   return (
     <div>
+      <InputTest />
       <IconTest />
       <button type="button" onClick={handleClick}>
         bridge test
