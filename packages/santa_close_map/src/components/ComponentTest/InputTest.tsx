@@ -7,7 +7,6 @@ export const InputTest = () => {
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value)
   }
-  console.log('value??', value)
 
   return (
     <div>
