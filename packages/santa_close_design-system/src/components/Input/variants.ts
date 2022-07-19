@@ -77,4 +77,5 @@ export const isDisabled = {
 
 export const defaultVariants = {
   size: 'md',
+  isDisabled: false,
 }
