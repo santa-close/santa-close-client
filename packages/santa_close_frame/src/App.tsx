@@ -1,17 +1,57 @@
-import React, {ChangeEvent} from 'react'
-import {Navigator, Screen} from '@karrotframe/navigator'
+import React, {ChangeEvent, useEffect} from 'react'
 import {RecoilRoot, useRecoilState} from 'recoil'
 import {sampleState} from 'map_app/atoms'
 import {UrqlProvider} from 'santa_close_common'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 const MapApp = React.lazy(() => import('map_app/MapApp'))
 
-const Page1 = () => {
-  return <h1>Here is PAGE1</h1>
-}
+const Login = () => {
+  const handleKaKaoLoginClick = () => {
+    Kakao.Auth.login({
+      success(authObj) {
+        console.log(authObj)
+      },
+      fail(err) {
+        console.log(err)
+      },
+    })
+  }
 
-const Page2 = () => {
-  return <h1>Here is PAGE2</h1>
+  useEffect(() => {
+    const initKakaoScript = async () => {
+      const scriptInitResult = new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = 'https://developers.kakao.com/sdk/js/kakao.js'
+        script.defer = true
+        document.head.appendChild(script)
+
+        script.addEventListener('load', () => {
+          resolve({isLoaded: true, isError: false})
+        })
+
+        script.addEventListener('error', () => {
+          // eslint-disable-next-line prefer-promise-reject-errors
+          reject({isLoaded: false, isError: true})
+        })
+      })
+
+      await scriptInitResult
+
+      Kakao.init('1a01c6b9fba660692d7388f0f7c5baaf')
+      console.log(Kakao.isInitialized())
+    }
+
+    initKakaoScript()
+  }, [])
+
+  return (
+    <div>
+      <button type="button" onClick={handleKaKaoLoginClick}>
+        login
+      </button>
+    </div>
+  )
 }
 
 const MapAppContainer = () => {
@@ -46,11 +86,12 @@ const App = () => {
   return (
     <UrqlProvider>
       <RecoilRoot>
-        <Navigator onClose={console.log}>
-          <Screen component={MapAppContainer} path="/" />
-          <Screen component={Page1} path="/page1" />
-          <Screen component={Page2} path="/page2" />
-        </Navigator>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<MapAppContainer />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </BrowserRouter>
       </RecoilRoot>
     </UrqlProvider>
   )
