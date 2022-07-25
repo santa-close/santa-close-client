@@ -20,6 +20,7 @@
     "@karrotframe/navigator": "^0.24.2",
     "urql": "^2.2.3",
     "graphql": "^16.5.0",
+    "graphql-tag": "^2.12.6",
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {

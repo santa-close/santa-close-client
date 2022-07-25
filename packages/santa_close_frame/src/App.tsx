@@ -1,19 +1,43 @@
 import React, {ChangeEvent, useEffect} from 'react'
 import {RecoilRoot, useRecoilState} from 'recoil'
 import {sampleState} from 'map_app/atoms'
-import {UrqlProvider} from 'santa_close_common'
+import {UrqlProvider, urqlClient} from 'santa_close_common'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import gql from 'graphql-tag'
 
 const MapApp = React.lazy(() => import('map_app/MapApp'))
 
 const Login = () => {
   const handleKaKaoLoginClick = () => {
     Kakao.Auth.login({
-      success(authObj) {
-        console.log(authObj)
+      success({access_token}) {
+        const foo = async () => {
+          const result = await urqlClient
+            .mutation(
+              gql`
+                mutation SignIn($input: SignInAppInput!) {
+                  signIn(input: $input) {
+                    accessToken
+                    expiredAt
+                  }
+                }
+              `,
+              {
+                input: {
+                  code: access_token,
+                  type: 'KAKAO',
+                },
+              },
+            )
+            .toPromise()
+
+          localStorage.setItem('token', JSON.stringify(result.data.signIn))
+        }
+
+        foo()
       },
       fail(err) {
-        console.log(err)
+        console.log('err', err)
       },
     })
   }
