@@ -3,17 +3,17 @@ import {RecoilRoot, useRecoilState} from 'recoil'
 import {sampleState} from 'map_app/atoms'
 import {UrqlProvider} from 'santa_close_common'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Login from './Login'
+import Login from './pages/Login'
 
 const MapApp = React.lazy(() => import('map_app/MapApp'))
 
 const MapAppContainer = () => {
   const [state, setState] = useRecoilState<string>(sampleState)
 
-  const handleStateChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleStateChange = (event: ChangeEvent<HTMLInputElement>) => {
     const {
       target: {value},
-    } = e
+    } = event
 
     setState(value)
   }
