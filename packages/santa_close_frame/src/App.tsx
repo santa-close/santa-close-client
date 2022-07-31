@@ -4,6 +4,8 @@ import {sampleState} from 'map_app/atoms'
 import {UrqlProvider} from 'santa_close_common'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Login from './pages/Login'
+import {ProtectedRoute} from './components'
+import {useAccessToken} from './hooks'
 
 const MapApp = React.lazy(() => import('map_app/MapApp'))
 
@@ -36,6 +38,8 @@ const MapAppContainer = () => {
 }
 
 const App = () => {
+  const {isAvailable} = useAccessToken()
+
   return (
     <UrqlProvider>
       <RecoilRoot>
@@ -43,6 +47,14 @@ const App = () => {
           <Routes>
             <Route path="/" element={<MapAppContainer />} />
             <Route path="/login" element={<Login />} />
+            <Route
+              path="/protectePath"
+              element={
+                <ProtectedRoute isAllowed={isAvailable} redirectTo="/login">
+                  <div>Protected Page</div>
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </BrowserRouter>
       </RecoilRoot>

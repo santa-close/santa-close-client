@@ -1,6 +1,7 @@
+import {useNavigate} from 'react-router-dom'
 import {urqlClient} from 'santa_close_common'
 import {gql} from 'urql'
-import {useKakaoInit} from '../hooks'
+import {useKakaoInit, useLocalStorage} from '../hooks'
 
 const SignInDocumnet = gql`
   mutation SignIn($input: SignInAppInput!) {
@@ -12,11 +13,27 @@ const SignInDocumnet = gql`
 `
 
 const Login = () => {
+  const navigate = useNavigate()
+  const {isLoaded} = useKakaoInit({
+    appKey: '1a01c6b9fba660692d7388f0f7c5baaf',
+    loadType: 'defer',
+  })
+
+  // eslint-disable-next-line @typescript-eslint/naming-convention, @typescript-eslint/no-unused-vars
+  const [_, setAccessToken] = useLocalStorage('accessToken', {
+    accessToken: '',
+    expiredAt: '',
+  })
+
   const handleKaKaoLoginClick = () => {
     Kakao.Auth.login({
-      success({access_token}) {
+      success: ({access_token}) => {
         ;(async () => {
-          const result = await urqlClient
+          const {
+            data: {
+              signIn: {accessToken, expiredAt},
+            },
+          } = await urqlClient
             .mutation(SignInDocumnet, {
               input: {
                 code: access_token,
@@ -25,21 +42,17 @@ const Login = () => {
             })
             .toPromise()
 
-          localStorage.setItem('token', JSON.stringify(result.data.signIn))
+          const result = {accessToken, expiredAt}
+          setAccessToken(result)
         })()
 
-        console.log('kakao login success')
+        navigate('/', {replace: true})
       },
-      fail(error) {
+      fail: (error) => {
         console.error('kakao login failed', error)
       },
     })
   }
-
-  const {isLoaded} = useKakaoInit({
-    appKey: '1a01c6b9fba660692d7388f0f7c5baaf',
-    loadType: 'defer',
-  })
 
   if (!isLoaded) return null
 
