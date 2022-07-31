@@ -17,11 +17,16 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "recoil": "^0.7.2",
-    "@karrotframe/navigator": "^0.24.2"
+    "@karrotframe/navigator": "^0.24.2",
+    "urql": "^2.2.3",
+    "graphql": "^16.5.0",
+    "graphql-tag": "^2.12.6",
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.3",
+    "@types/kakao-js-sdk": "^1.39.1",
     "@babel/core": "^7.17.10",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-env": "^7.17.10",
