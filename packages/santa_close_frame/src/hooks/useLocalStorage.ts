@@ -2,7 +2,7 @@ import {useState} from 'react'
 
 const isClient = typeof window !== 'undefined'
 
-export function useLocalStorage<T>(key: string, initialValue: T) {
+export const useLocalStorage = <T>(key: string, initialValue: T) => {
   const [storedValue, setStoredValue] = useState<T>(() => {
     if (!isClient) return initialValue
 
