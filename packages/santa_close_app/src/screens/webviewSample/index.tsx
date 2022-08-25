@@ -8,8 +8,10 @@ import {TabKeys} from '../../TabNavigator';
 const WebViewSampleScreen = () => {
   const navigation = useNavigation();
   const webviewRef = useRef<WebView>(null);
+
   const handleMessage = (event: WebViewMessageEvent) => {
     const data = parseBridgeData(event.nativeEvent.data);
+
     switch (data.action) {
       case 'navigate':
         navigation.navigate(data.params.to as TabKeys);
@@ -17,12 +19,14 @@ const WebViewSampleScreen = () => {
       default:
         break;
     }
+
     webviewRef.current.injectJavaScript(
       `(function() {
         window.dispatchEvent(
           new MessageEvent('message', 
             {data: ${JSON.stringify({
-              id: data.bridgeId,
+              bridgeId: data.bridgeId,
+              responseData: {foo: 'bar'},
             })}
             }
           )

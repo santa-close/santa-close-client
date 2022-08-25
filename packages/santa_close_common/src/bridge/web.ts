@@ -34,11 +34,18 @@ export const useInitBridge = () => {
 
     const handleMessage = (event: MessageEvent) => {
       const {
-        data: {bridgeId},
+        data: {bridgeId, responseData},
       } = event
       const callback = callbackMap.get(bridgeId)
 
-      if (callback) callback(bridgeId)
+      if (callback) {
+        if (responseData) {
+          callback(responseData)
+          return
+        }
+
+        callback()
+      }
 
       callbackMap.delete(bridgeId)
     }
