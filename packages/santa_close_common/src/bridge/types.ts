@@ -7,7 +7,7 @@ export type CallbackParams<T> = T & {
 }
 
 export type Callback<T = unknown> = (
-  params: CallbackParams<T>,
+  params?: CallbackParams<T>,
 ) => void | Promise<void>
 
 export type NavigateParams = {

@@ -1,4 +1,4 @@
-import {Suspense} from 'react'
+import {Suspense, useState} from 'react'
 import {bridge, useInitBridge, useSampleQuery} from 'santa_close_common'
 import {
   ToggleGroup,
@@ -31,14 +31,16 @@ const TestComponent = () => {
 export const ComponentTest = () => {
   useInitBridge()
 
+  const [state, setState] = useState('?')
   const handleClick = () => {
-    bridge('navigate', {to: 'Home'}, ({bridgeId}) => {
-      console.log('callback', bridgeId)
+    bridge('navigate', {to: 'Home'}, (response) => {
+      setState(JSON.stringify(response))
     })
   }
 
   return (
     <div>
+      <div>{state}</div>
       <InputTest />
       <IconTest />
       <button type="button" onClick={handleClick}>
